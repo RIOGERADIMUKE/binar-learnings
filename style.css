@@ -1,29 +1,54 @@
-.tittle-binar {
-  font-size: 32px;
+/* Navbar */
+.nav-0 a {
+  color: black;
+}
+.tittle {
   font-weight: bold;
-  padding-top: 20%;
+  font-size: 40px;
+  margin-top: 150px;
 }
 .gambar img {
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-@media (min-width: 320px) and (max-width: 480px) {
-  .tittle-binar {
-    padding-top: 5px;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-  }
-  .gambar img {
-    width: 100%;
-  }
-  .text-mobile {
-    font-size: 14px;
-    text-align: center;
-  }
-  .button-mobile a {
-    width: 100%;
-  }
-  .row {
-    flex-wrap: wrap-reverse;
-  }
+.box {
+  width: 100px;
+  height: 100px;
+}
+.offcanvas-body-0 {
+  background-color: #2133b8;
+  border-radius: 10px;
+  padding-right: 50%;
+  padding: 10px;
+}
+.content-0 {
+  background-color: #2133b8;
+}
+/* Explore */
+.explore-0 {
+  text-align: center;
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 30px;
+}
+/* grid */
+.row-media {
+  margin-top: 60px;
+}
+.card {
+  height: 250spx;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Related Product */
+.related-0 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 5%;
+}
+.row-media-0 {
+  margin-left: auto;
+  margin-right: auto;
 }
