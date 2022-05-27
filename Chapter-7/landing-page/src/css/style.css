@@ -1,0 +1,331 @@
+/* navbar */
+.bg-all {
+    background-color: #F1F3FF;
+}
+
+.bg-btn {
+    background-color: #5CB85F;
+    color: white;
+}
+
+.navbar-loc {
+    margin: 0% 6%;
+}
+
+.brand {
+    background-color: #0D28A6;
+    width: 100px;
+    height: 34px;
+    margin-left: 6%;
+}
+
+.off-navbar {
+    width: 50%;
+}
+
+.tittle {
+    font-size: 36px;
+    font-weight: bold;
+    padding-top: 25%;
+}
+
+.content {
+    font-size: 14px;
+    padding-right: 80px;
+}
+
+/* navbar */
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* header */
+.grid-rent {
+    padding-top: 5%;
+    padding-left: 12%;
+}
+
+.grid-car {
+    padding-left: 3.5%;
+}
+
+.size-car {
+    width: 704px;
+    height: 407px;
+}
+
+/* header */
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* cari sewa mobil */
+.center-sewa {
+    align-items: center;
+}
+
+.position-sewa {
+    margin-top: -50px;
+    width: 75%;
+}
+
+.card-body {
+    padding: 1rem 3rem;
+}
+
+.btn-sewa {
+    margin-top: 38%;
+    width: 100px;
+}
+
+.border-sewa {
+    border-radius: 10px;
+}
+
+.grid-sewa {
+    padding-left: 5%;
+}
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* cardlist */
+.size-carlist{
+    width: 22rem;
+    height: 38rem;
+}
+
+.pos-carlist{
+    margin-left: 3%;
+}
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* konten mbak mbak */
+.grid-service {
+    margin-top: 6%;
+}
+
+.size-service {
+    width: 459px;
+    height: 428px;
+}
+
+.grid-best {
+    padding-left: 10%;
+}
+
+.icon-tick {
+    color: #1434d4;
+    font-size: 20px;
+    background-color: #CFD4ED;
+    width: 30px;
+    height: 30px;
+}
+
+/* konten mbak mbak */
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* why us */
+.grid-whyus {
+    margin-top: 100px;
+}
+
+.icon-promotion {
+    height: 100%;
+}
+
+.why-us {
+    padding-top: 100px;
+}
+
+.why-text p {
+    font-size: 14px;
+}
+
+.why-text .card {
+    border-radius: 8px;
+}
+
+.height-card {
+    height: auto;
+}
+
+/* why us */
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* testimonial */
+.card-testi {
+    width: 619px;
+    height: 270px;
+}
+
+.item {
+    width: 100%;
+    background-color: rgba(241, 243, 255, 1);
+}
+
+.card-left {
+    width: 30%;
+    height: 30%;
+    margin: 50px 10px;
+}
+
+.card-right {
+    text-align: justify;
+    font-size: 12px;
+    padding: 50px 30px 0 20px;
+}
+
+.card-right i {
+    color: gold;
+    padding-bottom: 10px;
+}
+
+.Testimonial-tittle {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.owl-carousel .card-body {
+    display: flex;
+}
+
+
+/* testimonial */
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* konten sewa mobil */
+.grid-rentcar {
+    background-color: #0D28A6;
+    border-radius: 13px;
+}
+
+.spacing-text {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+/* konten sewa mobil */
+
+/* ====================================================== */
+/* ====================================================== */
+
+/* FAQ */
+.display-accor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FAQ */
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+    .size-car {
+        width: 100%;
+        height: 100%;
+    }
+
+    .grid-service1 {
+        margin-top: 8%;
+    }
+
+    .size-service {
+        width: 90%;
+        height: 90%;
+    }
+
+    .size-card {
+        margin-top: 5%;
+    }
+
+    .pos-card {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    .faq {
+        text-align: center;
+    }
+
+    .center-icon {
+        align-items: center;
+    }
+
+    .center-img {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .reset-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer {
+        padding-left: 4%;
+    }
+
+    .size-carosel {
+        height: max-content;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .img-pos {
+        margin-top: 0;
+    }
+
+    .brand {
+        margin-left: 10%;
+    }
+
+    .owl-carousel .card-body {
+        display: block;
+    }
+
+    .card-right {
+        padding: 0;
+    }
+
+    .card-left {
+        width: 25%;
+        height: 25%;
+        margin: 0;
+        margin-left: 37%;
+    }
+
+    .icon-pos {
+        padding-top: 5%;
+    }
+
+    .pos-carlist{
+        margin-left: 0%;
+    }
+
+    .size-carlist{
+        width: 22rem;
+        height: 36rem;
+    }
+    
+    .pos-form{
+        margin-top: 0%;
+    }
+
+    .pos-form button{
+        width: 100%;
+    }
+
+    .btn-sewa{
+        margin-top: 10%;
+    }
+}

@@ -2,9 +2,7 @@ const usersRepository = require("../repositories/usersRepository");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { OAuth2Client } = require("google-auth-library");
-
 const { JWT } = require("../lib/const");
-
 const SALT_ROUND = 10;
 
 class AuthService {
