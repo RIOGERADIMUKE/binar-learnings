@@ -1,20 +1,16 @@
 import { Link, Navigate } from "react-router-dom";
-import { Button, Alert, Table } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { addUser } from "../slices/userSlice";
 import { useDispatch } from "react-redux";
+import { addUser } from "../slices/userSlice";
 
 function Home() {
   const dispatch = useDispatch();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [user, setUser] = useState({});
 
-  const [data, setData] = useState([]);
-
-  
   useEffect(() => {
-
     const fetchData = async () => {
       try {
         // Check status user login
@@ -34,12 +30,14 @@ function Home() {
         const currentUserResponse = currentUserRequest.data;
 
         if (currentUserResponse.status) {
+          // Set user data to redux state
           dispatch(
             addUser({
               user: currentUserResponse.data.user,
               token: token,
             })
-          )
+          );
+
           setUser(currentUserResponse.data.user);
         }
       } catch (err) {
@@ -48,7 +46,6 @@ function Home() {
     };
 
     fetchData();
-    posts();
   }, []);
 
   const logout = () => {
@@ -58,21 +55,6 @@ function Home() {
     setUser({});
   };
 
-  const posts = async () => {
-    try {
-      const dataPosts = await axios.get(
-        `http://localhost:2000/api/posts`
-      )
-
-      const payloadData = await dataPosts.data.data.getDataAll;
-
-      setData(payloadData)
-    } catch (err) {
-      console.log(err);
-    }
-  }
-  
-
   return isLoggedIn ? (
     <div className="p-3">
       <Button className="my-3" variant="danger" onClick={(e) => logout(e)}>
@@ -80,43 +62,9 @@ function Home() {
       </Button>
 
       <Alert>Selamat datang {user.name}</Alert>
-      <div>
-
-      </div>
       <Link to="/about">
         <Button variant="success">Go to about page</Button>
       </Link>
-      <Link className="ms-5" to="/create">
-        <Button variant="primary">Go to Create post page</Button>
-      </Link>
-
-      <Table striped bordered hover className="mt-3">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((data) => (
-            <tr key={data.id}>
-              <td>{data.id}</td>
-              <td>{data.title}</td>
-              <td>{data.description}</td>
-              <td><Link className="ms-5" to={`/update/${data.id}`}>
-                <Button variant="warning">Go to edit post page</Button>
-              </Link>
-              </td>
-              <td><Link className="ms-5" to={`/delete/${data.id}`}>
-                <Button variant="danger">Go to delete post page</Button>
-              </Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
     </div>
   ) : (
     <Navigate to="/login" replace />
