@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { addUser } from "../slices/userSlice";
 import { useDispatch } from "react-redux";
+import { BsFillTrashFill, BsFillPencilFill} from "react-icons/bs";
+import "../style/style.css";
+
 
 function Home() {
   const dispatch = useDispatch();
@@ -75,21 +78,16 @@ function Home() {
 
   return isLoggedIn ? (
     <div className="p-3">
-      <Button className="my-3" variant="danger" onClick={(e) => logout(e)}>
-        Logout
-      </Button>
-
       <Alert>Selamat datang {user.name}</Alert>
       <div>
 
       </div>
       <Link to="/about">
-        <Button variant="success">Go to about page</Button>
+        <Button variant="success">About</Button>
       </Link>
       <Link className="ms-5" to="/create">
-        <Button variant="primary">Go to Create post page</Button>
+        <Button variant="primary">Create</Button>
       </Link>
-
       <Table striped bordered hover className="mt-3">
         <thead>
           <tr>
@@ -106,16 +104,19 @@ function Home() {
               <td>{data.title}</td>
               <td>{data.description}</td>
               <td><Link className="ms-5" to={`/update/${data.id}`}>
-                <Button variant="warning">Go to edit post page</Button>
+                <Button variant="warning"> <BsFillPencilFill/> Edit</Button>
               </Link>
-              </td>
-              <td><Link className="ms-5" to={`/delete/${data.id}`}>
-                <Button variant="danger">Go to delete post page</Button>
+              <Link className="ms-5" to={`/delete/${data.id}`}>
+             
+                <Button variant="danger"> <BsFillTrashFill/> Delete</Button>
               </Link>
               </td>
             </tr>
           ))}
         </tbody>
+        <Button className="nav-logout my-3" variant="danger" onClick={(e) => logout(e)}>
+        Logout
+      </Button>
       </Table>
     </div>
   ) : (
