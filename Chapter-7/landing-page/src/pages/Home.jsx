@@ -94,6 +94,7 @@ function Home() {
             <th>#</th>
             <th>Title</th>
             <th>Description</th>
+            <th>Picture</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -103,6 +104,7 @@ function Home() {
               <td>{data.id}</td>
               <td>{data.title}</td>
               <td>{data.description}</td>
+              <td><img className="w-25" src={`http://localhost:2000/public/files/${data.picture}`}/></td>
               <td><Link className="ms-5" to={`/update/${data.id}`}>
                 <Button variant="warning"> <BsFillPencilFill/> Edit</Button>
               </Link>

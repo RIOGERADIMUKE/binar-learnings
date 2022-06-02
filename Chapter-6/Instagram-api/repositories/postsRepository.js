@@ -1,11 +1,12 @@
 const { posts } = require("../models");
 
 class PostsRepository {
-  static async create({ user_id, title, description }) {
+  static async create({ user_id, title, description, picture }) {
     const createdPost = posts.create({
       user_id,
       title,
       description,
+      picture
     });
 
     return createdPost;

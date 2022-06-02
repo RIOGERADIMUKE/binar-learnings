@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const swaggerUi = require("swagger-ui-express");
-// const swaggerDocument = require("./swagger.json");
 const cors = require("cors");
+const upload = require("./utils/fileUpload");
+const path = require("path");
 
 const app = express();
 const PORT = 2000;
@@ -29,7 +29,7 @@ app.get("/auth/me", middleware.authenticate, authController.currentUser);
 app.post("/auth/login-google", authController.loginGoogle);
 
 // Posts
-app.post("/posts", middleware.authenticate, postsController.create);
+app.post("/posts", middleware.authenticate,  upload.single("picture"), postsController.create);
 app.delete("/posts/:id", middleware.authenticate, postsController.deleteByID);
 app.put("/posts/:id", middleware.authenticate, postsController.updateByID);
 
@@ -38,8 +38,8 @@ app.get("/api/posts", postsController.getAll);
 app.get('/api/posts/:id', postsController.getById);
 app.delete("/users/:id",middleware.authenticate,middleware.isAdmin,usersController.deleteByID);
 
-// API Documentation
-// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// Public Storage
+app.use("/public/files", express.static(path.join(__dirname, "/storages")));
 
 app.listen(PORT, () => {
   console.log(`Server berhasil berjalan di port http://localhost:${PORT}`);

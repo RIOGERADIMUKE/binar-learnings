@@ -9,6 +9,7 @@ const create = async (req, res, next) => {
     user_id,
     title,
     description,
+    picture: req.uploaded_picture,
   });
 
   res.status(status_code).send({
@@ -82,6 +83,7 @@ const updateByID = async (req, res, next) => {
     user_id,
     title,
     description,
+    picture: req.uploaded_picture,
   });
 
   res.status(status_code).send({

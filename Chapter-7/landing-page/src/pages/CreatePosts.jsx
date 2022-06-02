@@ -8,6 +8,7 @@ export default function CreatePosts() {
 
   const titleField = useRef("");
   const descriptionField = useRef("");
+  const [pictureField, setPictureField] = useState();
 
   const [errorResponse, setErrorResponse] = useState({
     isError: false,
@@ -19,15 +20,16 @@ export default function CreatePosts() {
 
     try {
       const token = localStorage.getItem("token");
-      const userToCreatePayload = {
-        title: titleField.current.value,
-        description: descriptionField.current.value,
-      };
+      const postPayload = new FormData();
+      postPayload.append("title", titleField.current.value);
+      postPayload.append("description", descriptionField.current.value);
+      postPayload.append("picture", pictureField);
 
       const createRequest = await axios.post(
-        "http://localhost:2000/posts", userToCreatePayload, {
+        "http://localhost:2000/posts", postPayload, {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
         },
       }
       );
@@ -63,6 +65,13 @@ export default function CreatePosts() {
             type="text"
             ref={descriptionField}
             placeholder="Masukkan Email"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Picture</Form.Label>
+          <Form.Control
+            type="file"
+            onChange={(e) => setPictureField(e.target.files[0])}
           />
         </Form.Group>
         {errorResponse.isError && (
