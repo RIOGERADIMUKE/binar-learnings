@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const upload = require("./utils/fileUpload");
 const path = require("path");
-
 const app = express();
 const PORT = 2000;
 

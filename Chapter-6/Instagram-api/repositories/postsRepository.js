@@ -29,16 +29,17 @@ class PostsRepository {
     return deletePost;
   }
 
-  static async updateByID({ id, title, description }) {
-    const deletePost = await posts.update(
+  static async updateByID({ id, title, description, picture }) {
+    const updatePost = await posts.update(
       {
         title,
         description,
+        picture
       },
       { where: { id } }
     );
 
-    return deletePost;
+    return updatePost;
   }
 }
 

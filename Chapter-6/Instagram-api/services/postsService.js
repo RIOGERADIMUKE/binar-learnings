@@ -131,7 +131,7 @@ static async getAll() {
     };
 }
 
-  static async updateByID({ id, user_id, title, description }) {
+  static async updateByID({ id, user_id, title, description, picture }) {
     try {
       const getPost = await postsRepository.getByID({ id });
 
@@ -140,6 +140,7 @@ static async getAll() {
           id,
           title,
           description,
+          picture
         });
 
         return {
