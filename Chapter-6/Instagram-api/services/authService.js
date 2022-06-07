@@ -202,12 +202,12 @@ class AuthService {
         google_credential: googleCredential
     }) {
         try {
-            const client = new OAuth2Client("155043602177-a6mj7v3iv3ptrkfq8c0cioebm157sufu.apps.googleusercontent.com");
+            const client = new OAuth2Client("497081172258-0crldr8o7o1nn9th5bb6nm46vdqmnid1.apps.googleusercontent.com");
 
             // Get google user credential
             const userInfo = await client.verifyIdToken({
                 idToken: googleCredential,
-                audience: "155043602177-a6mj7v3iv3ptrkfq8c0cioebm157sufu.apps.googleusercontent.com",
+                audience: "497081172258-0crldr8o7o1nn9th5bb6nm46vdqmnid1.apps.googleusercontent.com",
             });
 
             const {
