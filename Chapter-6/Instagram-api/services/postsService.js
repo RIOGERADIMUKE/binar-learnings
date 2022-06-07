@@ -1,177 +1,161 @@
 const postsRepository = require("../repositories/postsRepository");
 
-class PostsService {
-  static async create({ user_id, title, description, picture }) {
-    try {
-      if (!title) {
-        return {
-          status: false,
-          status_code: 400,
-          message: "Password wajib diisi",
-          data: {
-            registered_user: null,
-          },
-        };
-      }
+class postsService {
+    static async create({
+        user_id,
+        title,
+        description,
+        picture,
+    }) {
+        if (!title) {
+            return {
+                status: false,
+                status_code: 400,
+                message: "title wajib diisi",
+                data: {
+                    registered_user: null,
+                },
+            };
+        }
 
-      if (!description) {
-        return {
-          status: false,
-          status_code: 400,
-          message: "Deskripsi wajib diisi",
-          data: {
-            registered_user: null,
-          },
-        };
-      }
+        if (!picture) {
+            return {
+                status: false,
+                status_code: 400,
+                message: "picture wajib diisi",
+                data: {
+                    registered_user: null,
+                },
+            };
+        }
 
-      if (!picture) {
+        if (!description) {
+            return {
+                status: false,
+                status_code: 400,
+                message: "description wajib diisi",
+                data: {
+                    registered_user: null,
+                },
+            };
+        }
+        const createdPosts = await postsRepository.create({
+            user_id,
+            title,
+            description,
+            picture,
+        });
+
         return {
-            status: false,
-            status_code: 400,
-            message: "Gambar wajib diisi",
+            status: true,
+            status_code: 201,
+            message: "created posts successfully",
             data: {
-                registered_user: null,
+                created_posts: createdPosts,
             },
         };
     }
 
-      const createdPost = await postsRepository.create({
+    static async deleteById({
         user_id,
-        title,
-        description,
-        picture
-      });
-
-      return {
-        status: true,
-        status_code: 201,
-        message: "Post created successfully",
-        data: {
-          created_post: createdPost,
-        },
-      };
-    } catch (err) {
-      return {
-        status: false,
-        status_code: 500,
-        message: err.message,
-        data: {
-          registered_user: null,
-        },
-      };
-    }
-  }
-
-  static async deleteByID({ id, user_id }) {
-    try {
-      const getPost = await postsRepository.getByID({ id });
-
-      if (getPost.user_id == user_id) {
-        const deletedPost = await postsRepository.deleteByID({
-          id,
-        });
-
-        return {
-          status: true,
-          status_code: 200,
-          message: "Post deleted successfully",
-          data: {
-            deleted_post: deletedPost,
-          },
-        };
-      } else {
-        return {
-          status: true,
-          status_code: 401,
-          message: "Resource Unauthorized",
-          data: {
-            deleted_post: null,
-          },
-        };
-      }
-    } catch (err) {
-      return {
-        status: false,
-        status_code: 500,
-        message: err.message,
-        data: {
-          registered_user: null,
-        },
-      };
-    }
-  }
-
-  static async getById({
-    id,
-}) {
-    const getById = await postsRepository.getById({
         id,
-    });
-    return {
-        status: true,
-        status_code: 200,
-        message: "success get data",
-        data: {
-            getdata: getById,
-        },
-    };
-}
-
-static async getAll() {
-    const getAll = await postsRepository.getAll();
-
-    return {
-        status: true,
-        status_code: 200,
-        message: "Posts successfully loaded",
-        data: {
-            getDataAll: getAll,
-        },
-    };
-}
-
-  static async updateByID({ id, user_id, title, description, picture }) {
-    try {
-      const getPost = await postsRepository.getByID({ id });
-
-      if (getPost.user_id == user_id) {
-        const updatedPost = await postsRepository.updateByID({
-          id,
-          title,
-          description,
-          picture
+    }) {
+        const getPosts = await postsRepository.getById({
+            id
         });
 
-        return {
-          status: true,
-          status_code: 200,
-          message: "Post updated successfully",
-          data: {
-            updated_post: updatedPost,
-          },
-        };
-      } else {
-        return {
-          status: true,
-          status_code: 401,
-          message: "Resource Unauthorized",
-          data: {
-            updated_post: null,
-          },
-        };
-      }
-    } catch (err) {
-      return {
-        status: false,
-        status_code: 500,
-        message: err.message,
-        data: {
-          registered_user: null,
-        },
-      };
-    }
-  }
-}
+        if (getPosts.user_id == user_id) {
+            const deletedPost = await postsRepository.deleteById({
+                id,
+            });
 
-module.exports = PostsService;
+            return {
+                status: true,
+                status_code: 200,
+                message: "Post deleted successfully",
+                data: {
+                    deleted_post: deletedPost,
+                },
+            };
+        } else {
+            return {
+                status: true,
+                status_code: 401,
+                message: "Resource Unauthorized",
+                data: {
+                    deleted_post: null,
+                },
+            };
+        }
+    }
+
+    static async getById({
+        id,
+    }) {
+        const getById = await postsRepository.getById({
+            id,
+        });
+        return {
+            status: true,
+            status_code: 200,
+            message: "success get data",
+            data: {
+                getdata: getById,
+            },
+        };
+    }
+
+    static async getAll() {
+        const getAll = await postsRepository.getAll();
+
+        return {
+            status: true,
+            status_code: 200,
+            message: "Posts successfully loaded",
+            data: {
+                getDataAll: getAll,
+            },
+        };
+    }
+
+        static async updateById({
+            id,
+            user_id,
+            title,
+            description,
+            picture,
+        }) {
+            const getPost = await postsRepository.getById({
+                id
+            });
+
+            if (getPost.user_id == user_id) {
+                const updatedPost = await postsRepository.updateById({
+                    id,
+                    title,
+                    description,
+                    picture,
+                });
+
+                return {
+                    status: true,
+                    status_code: 200,
+                    message: "Post updated successfully",
+                    data: {
+                        updated_post: updatedPost,
+                    },
+                };
+            } else {
+                return {
+                    status: true,
+                    status_code: 401,
+                    message: "Resource Unauthorized",
+                    data: {
+                        updated_post: null,
+                    },
+                };
+            }
+        }
+    }
+
+    module.exports = postsService;
