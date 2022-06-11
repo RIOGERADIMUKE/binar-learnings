@@ -26,12 +26,14 @@ export default function CreatePosts() {
       postPayload.append("picture", pictureField);
 
       const createRequest = await axios.post(
-        "http://localhost:2000/posts", postPayload, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      }
+        "http://localhost:2000/posts",
+        postPayload,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
 
       const createResponse = createRequest.data;
@@ -52,7 +54,7 @@ export default function CreatePosts() {
       <h1 className="mb-3 text-center">Create Postingan</h1>
       <Form onSubmit={onCreate}>
         <Form.Group className="mb-3">
-          <Form.Label>title</Form.Label>
+          <Form.Label>Title</Form.Label>
           <Form.Control
             type="text"
             ref={titleField}
@@ -60,7 +62,7 @@ export default function CreatePosts() {
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>description</Form.Label>
+          <Form.Label>Description</Form.Label>
           <Form.Control
             type="text"
             ref={descriptionField}
@@ -82,5 +84,5 @@ export default function CreatePosts() {
         </Button>
       </Form>
     </Container>
-  )
+  );
 }

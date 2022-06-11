@@ -1,8 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import {
-  Button,
-  Navbar,
   Container,
+  Button,
   Card,
   Row,
   Col,
@@ -165,35 +164,19 @@ function Home() {
         </Alert>
       )}
 
-      {/* navbar */}
-      <Navbar className=" bg-all">
-        <Container>
-          <div>
-            <p className="bg-nav fw-bold mt-3 ms-3">Welcome {user.name}!</p>
-          </div>
-          <Button
-            className="myButton2"
-            variant="danger"
-            onClick={(e) => logout(e)}
-          >
-            LOGOUT
-          </Button>
-          <Modal show={showModal} onHide={handleCloseModal}>
-            <Modal.Header closeButton>
-              <Modal.Title>Delete?</Modal.Title>
-            </Modal.Header>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleCloseModal}>
-                Cancel
-              </Button>
-              <Button variant="danger" onClick={(e) => logout(e)}>
-                Delete
-              </Button>
-            </Modal.Footer>
-          </Modal>
-          <Navbar.Toggle />
-        </Container>
-      </Navbar>
+      <Container>
+        <div>
+          <p className="bg-nav fw-bold mt-3 ms-3">Selamat Datang {user.name}</p>
+        </div>
+        <Button
+          className="myButton2"
+          variant="danger"
+          onClick={(e) => logout(e)}
+        >
+          LOGOUT
+        </Button>
+      </Container>
+
       <div className="row">
         <Link style={{ marginLeft: "115px" }} to="/about">
           <Button className="myButton" variant="success">
@@ -233,14 +216,14 @@ function Home() {
                 <div className="card-body">
                   <p className="card-text fw-bold text-center">{post.title}</p>
                   <p className="card-text text-center">{post.description}</p>
-                  <Link className="" to={`/update/${post.id}`}>
-                    <Button variant="warning">
+                  <Link to={`/update/${post.id}`}>
+                    <Button className="myButton5" variant="warning">
                       <BsFillPencilFill /> EDIT
                     </Button>
                   </Link>
                   <Button
                     variant="danger"
-                    className="ms-3"
+                    className="myButton2 ms-3"
                     onClick={(e) => handleShowModal(e, post)}
                   >
                     <BsFillTrashFill /> DELETE
@@ -258,10 +241,10 @@ function Home() {
           <Modal.Title>Delete?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
+          <Button className="myButton3" onClick={handleCloseModal}>
             Cancel
           </Button>
-          <Button variant="danger" onClick={(e) => onDelete(e)}>
+          <Button className="myButton4" onClick={(e) => onDelete(e)}>
             Delete
           </Button>
         </Modal.Footer>

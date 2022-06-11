@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Form, Container, Button, Alert, Row, Card } from "react-bootstrap";
+import { Form, Container, Button, Alert } from "react-bootstrap";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function UpdatePosts() {
   const navigate = useNavigate();
@@ -82,12 +82,22 @@ export default function UpdatePosts() {
           </h1>
           <Form onSubmit={onupdate}>
             <Form.Group style={{ marginTop: "30px" }}>
-              <Form.Label className="text-light">title</Form.Label>
-              <Form.Control type="text" ref={titleField} />
+              <Form.Label style={{ marginRight: "100%" }}>Title</Form.Label>
+              <Form.Control
+                type="text"
+                ref={titleField}
+                placeholder="Masukkan Title"
+              />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label className="text-light">description</Form.Label>
-              <Form.Control type="text" ref={descriptionField} />
+              <Form.Label style={{ marginRight: "100%" }}>
+                Description
+              </Form.Label>
+              <Form.Control
+                type="text"
+                ref={descriptionField}
+                placeholder="Masukkan Description"
+              />
             </Form.Group>
             <Form.Group>
               <Form.Control
