@@ -1,9 +1,19 @@
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { Nav, Navbar, Form, Container, Button, Alert } from "react-bootstrap";
+import {
+  Col,
+  Row,
+  Nav,
+  Navbar,
+  Form,
+  Container,
+  Button,
+  Alert,
+} from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import { selectUser } from "../slices/userSlice";
-import { FiCamera, FiArrowLeft } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
+import { BiPlus } from "react-icons/bi";
 import axios from "axios";
 import "../style/style.css";
 
@@ -65,7 +75,7 @@ function About() {
           <Navbar.Brand href="#" className="brand" />
           <div className="offcanvas-body" id="offcanvasRight">
             <div className="info1 navbar">
-              <Nav className="text-dark"> Lengkapi Info Akun </Nav>
+              <Nav className="text-dark"> Lengkapi Detail Produk </Nav>
             </div>
           </div>
         </nav>
@@ -78,37 +88,30 @@ function About() {
           </Link>
         </div>
         <div>
-          <Nav className="info2 text-dark">Lengkapi Info Akun</Nav>
+          <Nav className="info3 text-dark">Lengkapi Detail Produk</Nav>
         </div>
         <Form onSubmit={onCreate}>
-          <button className="mb-3 box1">
-            <h2>
-              <FiCamera
-                className="camera"
-                onChange={(e) => setPictureField(e.target.files[0])}
-              />
-            </h2>
-          </button>
           <Form className="border1 mb-3" style={{ fontWeight: "bold" }}>
-            <Form.Label>Nama*</Form.Label>
+            <Form.Label>Nama Produk</Form.Label>
             <Form.Control type="text" ref={titleField} placeholder="Nama" />
           </Form>
+          <Form className="border1 mb-3" style={{ fontWeight: "bold" }}>
+            <Form.Label>Harga Produk</Form.Label>
+            <Form.Control type="text" ref={titleField} placeholder="Rp 0,00" />
+          </Form>
           <Form.Group className="mb-3" style={{ fontWeight: "bold" }}>
-            <Form.Label>Kota*</Form.Label>
+            <Form.Label>Kategori</Form.Label>
             <select ref={descriptionField} className="form-select">
-              <option hidden>Pilih Kota</option>
-              <option value="Jakarta">Jakarta</option>
-              <option value="JawaTengah">Jawa Tengah</option>
-              <option value="JawaTimur">Jawa Timur</option>
-              <option value="JawaBarat">Jawa Barat</option>
-              <option value="KalimantanTengah">Kalimantan Tengah</option>
-              <option value="KalimantanTimur">Kalimantan Timur</option>
-              <option value="KalimantanSelatan">Kalimantan Selatan</option>
-              <option value="KalimantanBarat">Kalimantan Barat</option>
+              <option hidden>Pilih Kategori</option>
+              <option value="Hobi">Hobi</option>
+              <option value="Kendaraan">Kendaraan</option>
+              <option value="Baju">Baju</option>
+              <option value="Elektronik">Elektronik</option>
+              <option value="Kesehatan">Kesehatan</option>
             </select>
           </Form.Group>
           <Form.Group className="mb-3" style={{ fontWeight: "bold" }}>
-            <Form.Label>Alamat*</Form.Label>
+            <Form.Label>Deskripsi</Form.Label>
             <Form.Control
               type="text"
               ref={descriptionField}
@@ -118,19 +121,31 @@ function About() {
             />
           </Form.Group>
           <Form.Group className="mb-3" style={{ fontWeight: "bold" }}>
-            <Form.Label>No Handphone*</Form.Label>
-            <Form.Control
-              type="text"
-              ref={descriptionField}
-              placeholder="contoh: +628123456789"
-            />
+            Foto Produk
           </Form.Group>
+          <button className="mb-3 box2">
+            <h2>
+              <BiPlus
+                className="plus"
+                onChange={(e) => setPictureField(e.target.files[0])}
+              />
+            </h2>
+          </button>
+          <Row>
+            <Col>
+              <button className="myButton7 w-100" type="submit">
+                Preview
+              </button>
+            </Col>
+            <Col>
+              <button className="myButton6 w-100" type="submit">
+                Terbitkan
+              </button>
+            </Col>
+          </Row>
           {errorResponse.isError && (
             <Alert variant="danger">{errorResponse.message}</Alert>
           )}
-          <button className="myButton6 w-100" type="submit">
-            Simpan
-          </button>
         </Form>
       </Container>
     </div>

@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Register from "./pages/Register";
+import InfoProduct from "./pages/InfoProduct";
 import Login from "./pages/Login";
 import CreatePosts from "./pages/CreatePosts";
 import UpdatePosts from "./pages/UpdatePosts";
@@ -21,6 +22,7 @@ render(
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/infoproduct" element={<InfoProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create" element={<CreatePosts />} />
         <Route path="/update/:id" element={<UpdatePosts />} />

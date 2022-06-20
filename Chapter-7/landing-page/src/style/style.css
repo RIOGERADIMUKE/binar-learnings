@@ -3,6 +3,31 @@
 	margin-left: 160px;
 }
 
+.na3 {
+	background:linear-gradient(to bottom, #7126B5 5%, #7126B5 100%);
+	background-color:#7126B5;
+	border-radius:10px;
+	border:2px solid #7126B5;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:10px 20px;
+	text-decoration:none;
+	margin-left: 500px;
+	border:none;
+}
+
+.na3:hover {
+	background:linear-gradient(to bottom, #653096 5%, #653096 100%);
+	background-color:#653096;
+}
+
+.na3:active {
+	position:relative;
+	top:1px;
+}
+
 .info1{
 	margin-left: 290px;
 	font-weight: bold;
@@ -12,139 +37,31 @@
 .arrow2{
 	color: black;
 	font-size: 25px;
+	margin-left: -100px;
 }
 
-
-/* .myButton {
-	box-shadow: 0px 6px 20px -7px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:8px;
-	border:3px solid #29668f;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:9px 20px;
-	text-decoration:none;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
+/* search Navbar*/
+.search2{
+	padding-left: 20px;
+	font-size: 20px;
+	border: none;
+	background-color: #EEEEEE;
 }
 
-.myButton2 {
-	box-shadow:inset 0px 1px 0px 0px #f29c93;
-	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
-	background-color:#fe1a00;
-	border-radius:6px;
-	border:1px solid #d83526;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:10px 23px;
-	text-decoration:none;
-	text-shadow:0px 1px 19px #b23e35;
-	margin-left: 90%;
-}
-.myButton2:hover {
-	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
-	background-color:#ce0100;
-}
-.myButton2:active {
-	position:relative;
-	top:1px;
+.search1{
+	font-size: 20px;
+	border: none;
+	background-color: #EEEEEE;
 }
 
-.myButton3 {
-	background:linear-gradient(to bottom, #1b1b1a 5%, #20201f 100%);
-	background-color:#2a2b28;
-	border-radius:5px;
-	border:1px solid #030303;
-	display:inline-block;
-	cursor:pointer;
-	color:#111110;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-}
-.myButton3:hover {
-	background:linear-gradient(to bottom, #1c1d1b 5%, #494943 100%);
-	background-color:#9ba892;
-}
-.myButton3:active {
-	position:relative;
-	top:1px;
-}
-
-.myButton4 {
-	background:linear-gradient(to bottom, #e02e2e 5%, #e02e2e 100%);
-	background-color:#e02e2e;
-	border-radius:5px;
-	border:1px solid #e02e2e;
-	display:inline-block;
-	cursor:pointer;
-	color:#e02e2e;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-}
-.myButton4:hover {
-	background:linear-gradient(to bottom, #e02e2e 5%, #a14040 100%);
-	background-color:#9ba892;
-}
-.myButton4:active {
-	position:relative;
-	top:1px;
-}
-  
-.myButton5 {
-	box-shadow:inset 0px 1px 0px 0px #d6e232;
-	background:linear-gradient(to bottom, #d6e232 5%, #d6e232 100%);
-	background-color:#d6e232;
-	border-radius:6px;
-	border:1px solid #d6e232;
-	display:inline-block;
-	cursor:pointer;
-	color:#d6e232;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:10px 23px;
-	text-decoration:none;
-	text-shadow:0px 1px 19px #d6e232;
-}
-.myButton5:hover {
-	background:linear-gradient(to bottom, #d6e232 5%, #d6e232 100%);
-	background-color:#d6e232;
-}
-.myButton5:active {
-	position:relative;
-	top:1px;
-} */
 
 .container div .info2{
 	display:none;
 }
 
-
-
-
-
-
+.container div .info3{
+	display:none;
+}
 
 
 .box {
@@ -163,6 +80,17 @@
 	border-radius: 12px;
   }
 
+  /* infoProduct */
+  .box2 {
+	width: 100px;
+	height: 100px;
+	border-style:dashed;
+	background-color: #ffffff;
+	border-color: #D0D0D0;
+  }
+/* infoproducts */
+
+
   .camera{
 	color: #7126B5;
 	
@@ -177,14 +105,14 @@
 	box-shadow:inset 0px 1px 0px 0px #7126B5;
 	background:linear-gradient(to bottom, #7126B5 5%, #7126B5 100%);
 	background-color:#7126B5;
-	border-radius:6px;
+	border-radius:16px;
 	border:1px solid #7126B5;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
 	font-size:15px;
-	padding:6px 24px;
+	padding:12px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #7126B5;
 }
@@ -196,22 +124,53 @@
 	position:relative;
 	top:1px;
 }
-
+/*Lengkapi Detail Produk */
+.myButton7 {
+	border-radius:16px;
+	border:2px solid #7126B5;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:15px;
+	padding:12px 24px;
+	text-decoration:none;
+	background-color:#ffffff;
+	text-shadow:0px 1px 0px #7126B5;
+}
+/*Lengkapi Detail Produk */
     
-@media screen and (max-width: 1023px) {
+@media (max-width: 1023px) {
+	/* Lengkapi Info akun */
     .na1 {
       display: none; 
     }
+	.box1{
+		margin-left: 100px;
+		margin-top: 20px;
+	}
 	.info1 {
 		display: block;
 	  }
+
 	  .container div .info2{
 		font-weight: bold;
 		padding-bottom: 5%;
-		transform: translate(33%, 0px);
+		transform: translate(28%, 8px);
 		display: block;
 	  }
 	  .arrow2{
 		position: absolute;
+	  }
+
+	  .border1{
+		margin-top: 15px;
+	  }
+		
+	  .container div .info3{
+		font-weight: bold;
+		padding-bottom: 5%;
+		transform: translate(13%, 8px);
+		display: block;
 	  }
 }

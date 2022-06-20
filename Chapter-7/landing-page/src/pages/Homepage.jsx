@@ -13,14 +13,7 @@ import axios from "axios";
 import { addUser } from "../slices/userSlice";
 import { useDispatch } from "react-redux";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
-import { BiSearch } from "react-icons/bi";
-import { FiLogIn } from "react-icons/fi";
 import "../style/style.css";
-
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 function Home() {
   const dispatch = useDispatch();
@@ -149,27 +142,8 @@ function Home() {
   };
 
   return isLoggedIn ? (
-    <div className=" bg-all">
-      <div className="na1 py-4 shadow">
-        <nav className="navbar navbar-expand-lg navbar-light bg-all">
-          <Link to="/">
-            <button className="na2 navbar-brand box"></button>
-          </Link>
-          <Navbar.Brand href="#" className="brand" />
-          <form>
-            <input type="text" placeholder="Search.." className="search2" />
-            <button className="search1">
-              <BiSearch />
-            </button>
-          </form>
-          <Link to="/">
-            <button className="na3 text-white">
-              <FiLogIn /> Masuk
-            </button>
-          </Link>
-          <div className="offcanvas-body" id="offcanvasRight"></div>
-        </nav>
-      </div>
+    <div className="p-3 bg-all">
+      {/* response success or error */}
       {successResponse.isSuccess && (
         <Alert
           variant="success"
@@ -212,11 +186,6 @@ function Home() {
             <Button className="myButton" variant="primary">
               CREATE
             </Button>
-            <Link style={{ marginLeft: "50px" }} to="/infoproduct">
-              <Button className="myButton" variant="success">
-                ABOUT
-              </Button>
-            </Link>
           </Link>
         </Link>
       </div>
